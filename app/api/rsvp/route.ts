@@ -1,4 +1,3 @@
-// app/api/rsvp/route.ts
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 
@@ -39,7 +38,7 @@ export async function POST(req: NextRequest) {
         email: rsvpData.email,
         phone: rsvpData.phone || "",
         total_guests: parseInt(rsvpData.total_guests || "1"),
-        guest_names: rsvpData.guest_names || "",
+        guest_names: rsvpData.guest_names || [], // store as array
         dietary_requirements: rsvpData.dietary_requirements || "None",
         needs_bus: rsvpData.needs_bus === "yes",
       });
@@ -57,8 +56,11 @@ export async function POST(req: NextRequest) {
       "Name,Email,Phone,Total Guests,Guest Names,Dietary Requirements,Needs Bus,Submission Date\n";
     const csvRows = allRsvps
       .map((rsvp) => {
+        const guestNamesString = Array.isArray(rsvp.guest_names)
+          ? rsvp.guest_names.join(" | ")
+          : rsvp.guest_names;
         const date = new Date(rsvp.created_at).toLocaleString();
-        return `"${rsvp.name}","${rsvp.email}","${rsvp.phone}",${rsvp.total_guests},"${rsvp.guest_names}","${rsvp.dietary_requirements || "None"}","${
+        return `"${rsvp.name}","${rsvp.email}","${rsvp.phone}",${rsvp.total_guests},"${guestNamesString}","${rsvp.dietary_requirements || "None"}","${
           rsvp.needs_bus ? "Yes" : "No"
         }","${date}"`;
       })
@@ -70,6 +72,11 @@ export async function POST(req: NextRequest) {
     );
 
     // Email HTML
+    const guestNamesString =
+      Array.isArray(rsvpData.guest_names) && rsvpData.guest_names.length > 0
+        ? rsvpData.guest_names.join(" | ")
+        : "N/A";
+
     const emailHtml = `
       <h2>New Wedding RSVP Submission</h2>
       <p><strong>Submission Date:</strong> ${new Date().toLocaleString()}</p>
@@ -79,7 +86,7 @@ export async function POST(req: NextRequest) {
       <p><strong>Email:</strong> ${rsvpData.email}</p>
       <p><strong>Phone:</strong> ${rsvpData.phone || "N/A"}</p>
       <p><strong>Total Guests:</strong> ${rsvpData.total_guests || 1}</p>
-      <p><strong>Guest Names:</strong> ${rsvpData.guest_names || "N/A"}</p>
+      <p><strong>Guest Names:</strong> ${guestNamesString}</p>
       <p><strong>Dietary Requirements:</strong> ${rsvpData.dietary_requirements || "None"}</p>
       <p><strong>Shuttle Bus:</strong> ${rsvpData.needs_bus === "yes" ? "Yes" : "No"}</p>
       <hr>
