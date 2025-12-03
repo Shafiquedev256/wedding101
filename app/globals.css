@@ -1,7 +1,7 @@
 @import "tailwindcss";
 h1,
 .h1 {
-  font-family: var(--font-cormorant-garamond);
+  font-family: var(--font-playfair);
 }
 body {
   font-family: var(--font-montserrat);

@@ -1,7 +1,16 @@
 import type { Metadata } from "next";
-import { Montserrat, Cormorant_Garamond } from "next/font/google";
+import {
+  Montserrat,
+  Cormorant_Garamond,
+  Playfair_Display,
+} from "next/font/google";
 import "./globals.css";
 
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-playfair",
+});
 const cormorant_Garamond = Cormorant_Garamond({
   variable: "--font-cormorant-garamond",
   subsets: ["latin"],
@@ -32,7 +41,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${cormorant_Garamond.variable} ${geistMono.variable} antialiased`}
+        className={`${cormorant_Garamond.variable} ${geistMono.variable} ${playfair.variable} antialiased`}
       >
         {children}
       </body>
