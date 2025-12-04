@@ -135,35 +135,6 @@ export default function Hero() {
             complemented by warm, luxurious undertones. Our fragrances are
             designed to capture romance and timeless sophistication.
           </p>
-
-          {/* Image with Date */}
-          <div className='flex flex-col md:flex-row justify-center items-center md:space-x-7 gap-4 mt-6'>
-            {/* Image */}
-            <div className='  sm:w-64  sm:h-48  overflow-hidden '>
-              <Image
-                src='/firstdate.jpg'
-                alt='Wedding'
-                width={200}
-                height={200}
-                className='rounded-lg'
-              />
-            </div>
-
-            {/* Date Box */}
-            <div className='flex items-center justify-center gap-2 bg-white border-2 border-[#7D2E3D] rounded-lg shadow-md p-4'>
-              <div className='text-2xl sm:text-3xl font-light text-[#7D2E3D]'>
-                20
-              </div>
-              <div className='text-2xl sm:text-3xl text-[#7D2E3D]'>❤️</div>
-              <div className='text-2xl sm:text-3xl font-light text-[#7D2E3D]'>
-                DEC
-              </div>
-              <div className='text-2xl sm:text-3xl text-[#7D2E3D]'>❤️</div>
-              <div className='text-2xl sm:text-3xl font-light text-[#7D2E3D]'>
-                2025
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>

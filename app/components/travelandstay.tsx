@@ -55,15 +55,9 @@ export default function TravelStay() {
         </div>
 
         {/* Neighborhoods */}
-        <div className='mb-16 bg-white p-8 rounded-lg shadow-md'>
-          <div className='flex items-start gap-4'>
-            <div className='w-12 h-12 flex items-center justify-center bg-[#7D2E3D] rounded-full shrink-0'>
-              <i className='ri-map-pin-line text-2xl text-white'></i>
-            </div>
+        <div className='mb-8 text-center flex flex-col justify-center items-center px-8'>
+          <div className='flex items-start md:w-[60%] gap-4'>
             <div>
-              <h3 className='text-2xl font-serif text-[#7D2E3D] mb-3'>
-                Neighborhoods
-              </h3>
               <p className='text-gray-700 leading-relaxed'>
                 As far as neighborhoods go, we think you might enjoy{" "}
                 <strong>Williamsburg</strong>, which is close to the venue. Or,
@@ -179,46 +173,6 @@ export default function TravelStay() {
             <p className='text-gray-700 leading-relaxed'>
               Newark Liberty International Airport has international flights and
               is about 1 hour by car from Brooklyn.
-            </p>
-          </div>
-
-          {/* Transportation */}
-          <div className='bg-white p-8 rounded-lg shadow-md'>
-            <div className='flex items-center gap-3 mb-6'>
-              <i className='ri-taxi-line text-2xl text-[#7D2E3D]'></i>
-              <h4 className='text-xl font-semibold text-gray-800'>
-                Getting to/from LGA or JFK to Brooklyn
-              </h4>
-            </div>
-
-            <br />
-
-            <div className='grid md:grid-cols-4 gap-4'>
-              {[
-                "ri-taxi-fill",
-                "ri-car-line",
-                "ri-taxi-fill",
-                "ri-subway-line",
-              ].map((icon, i) => (
-                <div
-                  key={i}
-                  className='bg-[#FDF8F5] p-4 rounded-lg text-center'
-                >
-                  <div className='w-12 h-12 flex items-center justify-center bg-[#7D2E3D] rounded-full mx-auto mb-3'>
-                    <i className={`${icon} text-xl text-white`}></i>
-                  </div>
-                  <p className='font-semibold text-gray-800'>
-                    {["Uber", "Lyft", "Taxi", "Subway"][i]}
-                  </p>
-                </div>
-              ))}
-            </div>
-
-            <br />
-
-            <p className='text-gray-600 text-sm mt-6 text-center italic'>
-              Uber, Lyft, or taxi are your best options. You can take the
-              subway, but it’s more complicated.
             </p>
           </div>
         </div>

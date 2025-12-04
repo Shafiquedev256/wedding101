@@ -15,11 +15,11 @@ export default function Contact() {
           </p>
         </div>
 
-        <div className='grid md:grid-cols-2 gap-10 md:gap-12'>
+        <div className='flex flex-col justify-center items-center'>
           {/* Contact Info */}
           <div className='space-y-10'>
             {/* Main contact block */}
-            <div className='bg-white rounded-lg shadow-lg p-6 sm:p-8 space-y-8'>
+            <div className='bg-white rounded-lg  p-6 sm:p-8 space-y-8'>
               {/* Email */}
               <div className='flex items-start gap-4'>
                 <div className='w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#7D2E3D] flex items-center justify-center shrink-0'>
@@ -73,67 +73,6 @@ export default function Contact() {
                 </div>
               </div>
             </div>
-
-            {/* Wedding Party Contacts */}
-            <div className='bg-white rounded-lg shadow-lg p-6 sm:p-8'>
-              <h3 className='text-2xl font-serif text-gray-800 mb-6'>
-                Wedding Party Contacts
-              </h3>
-
-              <div className='space-y-5'>
-                {/* Maid of Honor */}
-                <div className='pb-4 border-b border-gray-200'>
-                  <div className='font-semibold text-gray-800 mb-1'>
-                    Maid of Honor – Sarah Johnson
-                  </div>
-                  <a
-                    href='mailto:sarah.j@email.com'
-                    className='text-sm text-[#7D2E3D] hover:underline'
-                  >
-                    sarah.j@email.com
-                  </a>
-                </div>
-
-                {/* Best Man */}
-                <div className='pb-4 border-b border-gray-200'>
-                  <div className='font-semibold text-gray-800 mb-1'>
-                    Best Man – Michael Chen
-                  </div>
-                  <a
-                    href='mailto:michael.c@email.com'
-                    className='text-sm text-[#7D2E3D] hover:underline'
-                  >
-                    michael.c@email.com
-                  </a>
-                </div>
-
-                {/* Coordinator */}
-                <div>
-                  <div className='font-semibold text-gray-800 mb-1'>
-                    Wedding Coordinator – Emily Rose
-                  </div>
-                  <a
-                    href='mailto:emily.rose@events.com'
-                    className='text-sm text-[#7D2E3D] hover:underline'
-                  >
-                    emily.rose@events.com
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Map */}
-          <div className='bg-white rounded-lg shadow-lg overflow-hidden h-[350px] sm:h-[450px] md:h-[600px]'>
-            <iframe
-              src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3152.8937648348967!2d-122.31674368468198!3d37.80410897975633!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808f7e3b6f3e3b3b%3A0x3b3b3b3b3b3b3b3b!2sNapa%20Valley%2C%20CA!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus'
-              className='w-full h-full'
-              style={{ border: 0 }}
-              loading='lazy'
-              allowFullScreen
-              referrerPolicy='no-referrer-when-downgrade'
-              title='Venue Location Map'
-            />
           </div>
         </div>
       </div>
